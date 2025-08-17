@@ -21,9 +21,31 @@ jobs:
     - name: Run Go benchmark
       run: make go
 
-    - name: Upload benchmark results
+    - name: Upload Go benchmark results
       uses: actions/upload-artifact@v4
       with:
         name: go-benchmark-results
         path: go/benchmark_*.json
+        retention-days: 30
+
+  benchmark-php:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.3'
+
+    - name: Run PHP benchmark
+      run: make php
+
+    - name: Upload PHP benchmark results
+      uses: actions/upload-artifact@v4
+      with:
+        name: php-benchmark-results
+        path: php/benchmark_*.json
         retention-days: 30
