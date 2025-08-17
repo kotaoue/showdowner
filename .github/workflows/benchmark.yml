@@ -50,9 +50,53 @@ jobs:
         path: php/benchmark_*.json
         retention-days: 30
 
+  benchmark-python2:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Python 2.7
+      uses: actions/setup-python@v4
+      with:
+        python-version: '2.7'
+
+    - name: Run Python2 benchmark
+      run: make python2
+
+    - name: Upload Python2 benchmark results
+      uses: actions/upload-artifact@v4
+      with:
+        name: python2-benchmark-results
+        path: python2/benchmark_*.json
+        retention-days: 30
+
+  benchmark-python3:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Run Python3 benchmark
+      run: make python3
+
+    - name: Upload Python3 benchmark results
+      uses: actions/upload-artifact@v4
+      with:
+        name: python3-benchmark-results
+        path: python3/benchmark_*.json
+        retention-days: 30
+
   compare-languages:
     runs-on: ubuntu-latest
-    needs: [benchmark-go, benchmark-php]
+    needs: [benchmark-go, benchmark-php, benchmark-python2, benchmark-python3]
     
     steps:
     - name: Checkout code
