@@ -1,4 +1,4 @@
-.PHONY: go php all compare
+.PHONY: go php python2 all compare
 
 go:
 	cd go && go run .
@@ -6,7 +6,10 @@ go:
 php:
 	cd php && php main.php
 
-all: go php
+python2:
+	cd python2 && python2 main.py
+
+all: go php python2
 
 compare: all
 	cd compare && go run .

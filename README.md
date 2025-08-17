@@ -23,6 +23,9 @@ make go
 # PHPベンチマーク実行  
 make php
 
+# Python2ベンチマーク実行
+make python2
+
 # 全言語ベンチマーク実行
 make all
 

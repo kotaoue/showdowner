@@ -68,7 +68,7 @@ type Summary struct {
 }
 
 func findBenchmarkFiles() ([]string, error) {
-	patterns := []string{"../go/benchmark_*.json", "../php/benchmark_*.json"}
+	patterns := []string{"../go/benchmark_*.json", "../php/benchmark_*.json", "../python2/benchmark_*.json"}
 	var files []string
 	
 	for _, pattern := range patterns {
