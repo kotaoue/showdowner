@@ -15,6 +15,7 @@ type BenchmarkResult struct {
 	MemoryBytes int64   `json:"memory_bytes"`
 	Operations  int64   `json:"operations"`
 	OpsPerSec   float64 `json:"ops_per_sec"`
+	Error       string  `json:"error,omitempty"`
 }
 
 type BenchmarkReport struct {
@@ -154,16 +155,26 @@ func compareResults(reports []*BenchmarkReport) *Comparison {
 		for _, report := range reports {
 			for _, test := range report.Tests {
 				if test.Test == testName {
-					durationMs := float64(test.DurationNs) / 1e6
-					testComp.Results[report.Language] = TestResult{
-						DurationMs:  durationMs,
-						MemoryBytes: test.MemoryBytes,
-						OpsPerSec:   test.OpsPerSec,
-					}
-					
-					if fastestTime < 0 || durationMs < fastestTime {
-						fastestTime = durationMs
-						fastest = report.Language
+					// エラーがある場合は計測対象外として処理
+					if test.Error != "" || test.DurationNs < 0 {
+						testComp.Results[report.Language] = TestResult{
+							DurationMs:  -1,
+							MemoryBytes: -1,
+							OpsPerSec:   -1,
+							SpeedRatio:  -1,
+						}
+					} else {
+						durationMs := float64(test.DurationNs) / 1e6
+						testComp.Results[report.Language] = TestResult{
+							DurationMs:  durationMs,
+							MemoryBytes: test.MemoryBytes,
+							OpsPerSec:   test.OpsPerSec,
+						}
+						
+						if fastestTime < 0 || durationMs < fastestTime {
+							fastestTime = durationMs
+							fastest = report.Language
+						}
 					}
 					break
 				}
@@ -230,13 +241,17 @@ func printComparison(comp *Comparison) {
 		fmt.Printf("Fastest: %s\n", capitalize(test.Fastest))
 		
 		for lang, result := range test.Results {
-			fmt.Printf("%-10s: %8.2fms (×%.2f) | %10d bytes | %12.0f ops/sec\n",
-				capitalize(lang),
-				result.DurationMs,
-				result.SpeedRatio,
-				result.MemoryBytes,
-				result.OpsPerSec,
-			)
+			if result.DurationMs < 0 {
+				fmt.Printf("%-10s: %s\n", capitalize(lang), "計測対象外 (メモリ不足)")
+			} else {
+				fmt.Printf("%-10s: %8.2fms (×%.2f) | %10d bytes | %12.0f ops/sec\n",
+					capitalize(lang),
+					result.DurationMs,
+					result.SpeedRatio,
+					result.MemoryBytes,
+					result.OpsPerSec,
+				)
+			}
 		}
 	}
 }

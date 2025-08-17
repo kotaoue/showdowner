@@ -4,10 +4,15 @@ function printResults($results) {
     echo "\n=== BENCHMARK RESULTS ===\n";
     foreach ($results as $result) {
         printf("Test: %s\n", $result['test']);
-        printf("  Duration: %d ns\n", $result['duration_ns']);
-        printf("  Memory: %d bytes\n", $result['memory_bytes']);
-        printf("  Operations: %d\n", $result['operations']);
-        printf("  Ops/sec: %.2f\n", $result['ops_per_sec']);
+        
+        if (isset($result['error']) && $result['error']) {
+            printf("  Status: %s\n", $result['error']);
+        } else {
+            printf("  Duration: %d ns\n", $result['duration_ns']);
+            printf("  Memory: %d bytes\n", $result['memory_bytes']);
+            printf("  Operations: %d\n", $result['operations']);
+            printf("  Ops/sec: %.2f\n", $result['ops_per_sec']);
+        }
         echo "\n";
     }
 }
