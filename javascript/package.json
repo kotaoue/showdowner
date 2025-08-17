@@ -1,0 +1,12 @@
+{
+  "name": "benchmark",
+  "version": "1.0.0",
+  "description": "JavaScript performance benchmark",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {},
+  "author": "",
+  "license": "MIT"
+}

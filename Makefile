@@ -1,4 +1,4 @@
-.PHONY: go php python2 python3 rust all compare
+.PHONY: go php python2 python3 rust javascript all compare
 
 go:
 	cd go && go run .
@@ -15,7 +15,10 @@ python3:
 rust:
 	cd rust && cargo run --release
 
-all: go php python2 python3 rust
+javascript:
+	cd javascript && node main.js
+
+all: go php python2 python3 rust javascript
 
 compare: all
 	cd compare && go run .
