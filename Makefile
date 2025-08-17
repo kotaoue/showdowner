@@ -18,7 +18,7 @@ rust:
 javascript:
 	cd javascript && node main.js
 
-all: go php python2 python3 rust javascript
+all: go php python3 rust javascript
 
 compare: all
 	cd compare && go run .

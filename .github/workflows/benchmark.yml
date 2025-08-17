@@ -50,28 +50,6 @@ jobs:
         path: php/benchmark_*.json
         retention-days: 30
 
-  benchmark-python2:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Setup Python 2.7
-      uses: actions/setup-python@v4
-      with:
-        python-version: '2.7'
-
-    - name: Run Python2 benchmark
-      run: make python2
-
-    - name: Upload Python2 benchmark results
-      uses: actions/upload-artifact@v4
-      with:
-        name: python2-benchmark-results
-        path: python2/benchmark_*.json
-        retention-days: 30
-
   benchmark-python3:
     runs-on: ubuntu-latest
     
@@ -94,9 +72,54 @@ jobs:
         path: python3/benchmark_*.json
         retention-days: 30
 
+  benchmark-rust:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Run Rust benchmark
+      run: make rust
+
+    - name: Upload Rust benchmark results
+      uses: actions/upload-artifact@v4
+      with:
+        name: rust-benchmark-results
+        path: rust/benchmark_*.json
+        retention-days: 30
+
+  benchmark-javascript:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Run JavaScript benchmark
+      run: make javascript
+
+    - name: Upload JavaScript benchmark results
+      uses: actions/upload-artifact@v4
+      with:
+        name: javascript-benchmark-results
+        path: javascript/benchmark_*.json
+        retention-days: 30
+
   compare-languages:
     runs-on: ubuntu-latest
-    needs: [benchmark-go, benchmark-php, benchmark-python2, benchmark-python3]
+    needs: [benchmark-go, benchmark-php, benchmark-python3, benchmark-rust, benchmark-javascript]
     
     steps:
     - name: Checkout code
