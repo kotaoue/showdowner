@@ -1,4 +1,4 @@
-.PHONY: go php python2 python3 rust javascript typescript java kotlin cpp ruby c csharp swift all compare
+.PHONY: go php python2 python3 rust javascript typescript java kotlin cpp ruby c csharp swift dart scala julia all compare
 
 go:
 	cd go && go run .
@@ -42,7 +42,16 @@ csharp:
 swift:
 	cd swift && swift run -c release
 
-all: go php python3 rust javascript typescript java kotlin cpp ruby c csharp swift
+dart:
+	cd dart && dart run bin/main.dart
+
+scala:
+	cd scala && sbt run
+
+julia:
+	cd julia && julia main.jl
+
+all: go php python3 rust javascript typescript java kotlin cpp ruby c csharp swift dart scala julia
 
 compare: all
 	cd compare && go run .

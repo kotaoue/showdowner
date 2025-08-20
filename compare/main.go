@@ -82,6 +82,9 @@ func findBenchmarkFiles() ([]string, error) {
 		"../c/benchmark_*.json",
 		"../csharp/benchmark_*.json",
 		"../swift/benchmark_*.json",
+		"../dart/benchmark_*.json",
+		"../scala/benchmark_*.json",
+		"../julia/benchmark_*.json",
 	}
 	var files []string
 	
