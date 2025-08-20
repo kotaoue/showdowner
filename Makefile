@@ -25,7 +25,7 @@ java:
 	cd java && mvn compile exec:java
 
 kotlin:
-	cd kotlin && ./gradlew run
+	cd kotlin && gradle run
 
 cpp:
 	cd cpp && mkdir -p build && cd build && cmake .. && make && ./benchmark
