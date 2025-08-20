@@ -29,7 +29,7 @@ void Output::saveResultsToJSON(const std::vector<BenchmarkResult>& results, doub
     timestampStream << std::put_time(&tm, "%Y%m%d_%H%M%S");
     std::string timestamp = timestampStream.str();
     
-    std::string filename = "benchmark_cpp_" + timestamp + ".json";
+    std::string filename = "../benchmark_cpp_" + timestamp + ".json";
     std::ofstream file(filename);
     
     if (!file.is_open()) {
