@@ -17,7 +17,7 @@ class Output
   def self.save_results_to_json(results, total_time)
     report = {
       language: 'ruby',
-      timestamp: Time.now.iso8601,
+      timestamp: Time.now.strftime('%Y-%m-%dT%H:%M:%S'),
       ruby_version: RUBY_VERSION,
       ruby_engine: RUBY_ENGINE,
       ruby_platform: RUBY_PLATFORM,
