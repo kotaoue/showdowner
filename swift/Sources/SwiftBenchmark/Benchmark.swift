@@ -54,14 +54,12 @@ class Benchmark {
     private static func benchmarkMatrixMultiplication() -> BenchmarkResult {
         let start = DispatchTime.now()
         
-        let size = 500
+        let size = 300 // 500から300に削減してメモリ使用量を抑制
         var a = Array(repeating: Array(repeating: 0.0, count: size), count: size)
         var b = Array(repeating: Array(repeating: 0.0, count: size), count: size)
         var c = Array(repeating: Array(repeating: 0.0, count: size), count: size)
         
         // 行列初期化（再現可能性のため）
-        var rng = SystemRandomNumberGenerator()
-        rng = SystemRandomNumberGenerator() // シード固定代替
         for i in 0..<size {
             for j in 0..<size {
                 a[i][j] = Double.random(in: 0...1)
@@ -84,7 +82,7 @@ class Benchmark {
         let operations = Int64(size * size * size)
         
         return BenchmarkResult(
-            test: "Matrix Multiplication (500x500)",
+            test: "Matrix Multiplication (300x300)",
             durationNs: Int64(duration),
             memoryBytes: 0,
             operations: operations,
@@ -167,12 +165,12 @@ class Benchmark {
     private static func benchmarkMemoryAllocation() -> BenchmarkResult {
         let start = DispatchTime.now()
         
-        let allocations = 100000
+        let allocations = 50000 // 100kから50kに削減
         var arrays: [[Int]] = []
         arrays.reserveCapacity(allocations)
         
         for i in 0..<allocations {
-            let data = Array(repeating: i % 256, count: 256) // 1KB相当のデータ
+            let data = Array(repeating: i % 256, count: 128) // 512B相当に削減
             arrays.append(data)
         }
         
@@ -181,7 +179,7 @@ class Benchmark {
         let durationSeconds = Double(duration) / 1e9
         
         return BenchmarkResult(
-            test: "Memory Allocation (100k x 1KB)",
+            test: "Memory Allocation (50k x 512B)",
             durationNs: Int64(duration),
             memoryBytes: 0,
             operations: Int64(allocations),
@@ -192,8 +190,9 @@ class Benchmark {
     private static func benchmarkStringConcatenation() -> BenchmarkResult {
         let start = DispatchTime.now()
         
-        let iterations = 50000
+        let iterations = 25000 // 50kから25kに削減
         var result = ""
+        result.reserveCapacity(iterations * 20) // 事前にメモリ確保
         for i in 0..<iterations {
             result += "iteration_\(i)_"
         }
@@ -203,7 +202,7 @@ class Benchmark {
         let durationSeconds = Double(duration) / 1e9
         
         return BenchmarkResult(
-            test: "String Concatenation (50k iterations)",
+            test: "String Concatenation (25k iterations)",
             durationNs: Int64(duration),
             memoryBytes: 0,
             operations: Int64(iterations),
