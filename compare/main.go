@@ -238,10 +238,26 @@ func printComparison(comp *Comparison) {
 	// 全体結果
 	fmt.Println("## Overall Results")
 	minTime := comp.Summary.TotalTimes[comp.Summary.FastestOverall]
+	
+	// 言語を速度順にソート
+	type LangTime struct {
+		Lang string
+		Time float64
+	}
+	
+	var langTimes []LangTime
 	for lang, time := range comp.Summary.TotalTimes {
-		ratio := time / minTime
+		langTimes = append(langTimes, LangTime{Lang: lang, Time: time})
+	}
+	
+	sort.Slice(langTimes, func(i, j int) bool {
+		return langTimes[i].Time < langTimes[j].Time
+	})
+	
+	for _, lt := range langTimes {
+		ratio := lt.Time / minTime
 		fmt.Printf("%-10s: %.3fs (×%.2f)\n", 
-			capitalize(lang), time, ratio)
+			capitalize(lt.Lang), lt.Time, ratio)
 	}
 	
 	fmt.Printf("\nFastest: %s\n", capitalize(comp.Summary.FastestOverall))
