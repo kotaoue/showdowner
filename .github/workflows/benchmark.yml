@@ -297,6 +297,7 @@ jobs:
     - name: Copy benchmark results to their directories
       run: |
         mkdir -p go php python3 rust javascript typescript java kotlin cpp ruby c csharp
+        mkdir -p cpp/build
         cp artifacts/go-benchmark-results/* go/ 2>/dev/null || true
         cp artifacts/php-benchmark-results/* php/ 2>/dev/null || true
         cp artifacts/python3-benchmark-results/* python3/ 2>/dev/null || true
@@ -311,7 +312,7 @@ jobs:
         cp artifacts/csharp-benchmark-results/* csharp/ 2>/dev/null || true
 
     - name: Run comparison
-      run: make compare
+      run: cd compare && go run .
 
     - name: Upload comparison results
       uses: actions/upload-artifact@v4
