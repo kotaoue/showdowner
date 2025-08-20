@@ -275,9 +275,26 @@ jobs:
         path: csharp/benchmark_*.json
         retention-days: 30
 
+  benchmark-swift:
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Run Swift benchmark
+      run: make swift
+
+    - name: Upload Swift benchmark results
+      uses: actions/upload-artifact@v4
+      with:
+        name: swift-benchmark-results
+        path: swift/benchmark_*.json
+        retention-days: 30
+
   compare-languages:
     runs-on: ubuntu-latest
-    needs: [benchmark-go, benchmark-php, benchmark-python3, benchmark-rust, benchmark-javascript, benchmark-typescript, benchmark-java, benchmark-kotlin, benchmark-cpp, benchmark-ruby, benchmark-c, benchmark-csharp]
+    needs: [benchmark-go, benchmark-php, benchmark-python3, benchmark-rust, benchmark-javascript, benchmark-typescript, benchmark-java, benchmark-kotlin, benchmark-cpp, benchmark-ruby, benchmark-c, benchmark-csharp, benchmark-swift]
     
     steps:
     - name: Checkout code
@@ -296,7 +313,7 @@ jobs:
 
     - name: Copy benchmark results to their directories
       run: |
-        mkdir -p go php python3 rust javascript typescript java kotlin cpp ruby c csharp
+        mkdir -p go php python3 rust javascript typescript java kotlin cpp ruby c csharp swift
         mkdir -p cpp/build
         cp artifacts/go-benchmark-results/* go/ 2>/dev/null || true
         cp artifacts/php-benchmark-results/* php/ 2>/dev/null || true
@@ -310,6 +327,7 @@ jobs:
         cp artifacts/ruby-benchmark-results/* ruby/ 2>/dev/null || true
         cp artifacts/c-benchmark-results/* c/ 2>/dev/null || true
         cp artifacts/csharp-benchmark-results/* csharp/ 2>/dev/null || true
+        cp artifacts/swift-benchmark-results/* swift/ 2>/dev/null || true
 
     - name: Run comparison
       run: cd compare && go run .

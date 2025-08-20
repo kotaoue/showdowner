@@ -1,4 +1,4 @@
-.PHONY: go php python2 python3 rust javascript typescript java kotlin cpp ruby c csharp all compare
+.PHONY: go php python2 python3 rust javascript typescript java kotlin cpp ruby c csharp swift all compare
 
 go:
 	cd go && go run .
@@ -39,7 +39,10 @@ c:
 csharp:
 	cd csharp && dotnet run --configuration Release
 
-all: go php python3 rust javascript typescript java kotlin cpp ruby c csharp
+swift:
+	cd swift && swift run -c release
+
+all: go php python3 rust javascript typescript java kotlin cpp ruby c csharp swift
 
 compare: all
 	cd compare && go run .
