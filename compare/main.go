@@ -240,16 +240,42 @@ func printComparison(comp *Comparison) {
 		fmt.Printf("\n### %s\n", test.Test)
 		fmt.Printf("Fastest: %s\n", capitalize(test.Fastest))
 		
+		// 結果を速度順にソート（計測不可は最下位）
+		type LangResult struct {
+			Lang   string
+			Result TestResult
+		}
+		
+		var langResults []LangResult
 		for lang, result := range test.Results {
-			if result.DurationMs < 0 {
-				fmt.Printf("%-10s: %s\n", capitalize(lang), "計測対象外 (メモリ不足)")
+			langResults = append(langResults, LangResult{Lang: lang, Result: result})
+		}
+		
+		// ソート: 計測不可(-1)は最下位、それ以外は速度順
+		sort.Slice(langResults, func(i, j int) bool {
+			a, b := langResults[i].Result, langResults[j].Result
+			if a.DurationMs < 0 && b.DurationMs < 0 {
+				return false // 両方計測不可の場合は順序維持
+			}
+			if a.DurationMs < 0 {
+				return false // aが計測不可の場合はbより後
+			}
+			if b.DurationMs < 0 {
+				return true // bが計測不可の場合はaより前
+			}
+			return a.DurationMs < b.DurationMs // 通常の速度比較
+		})
+		
+		for _, lr := range langResults {
+			if lr.Result.DurationMs < 0 {
+				fmt.Printf("%-10s: %s\n", capitalize(lr.Lang), "計測対象外 (メモリ不足)")
 			} else {
 				fmt.Printf("%-10s: %8.2fms (×%.2f) | %10d bytes | %12.0f ops/sec\n",
-					capitalize(lang),
-					result.DurationMs,
-					result.SpeedRatio,
-					result.MemoryBytes,
-					result.OpsPerSec,
+					capitalize(lr.Lang),
+					lr.Result.DurationMs,
+					lr.Result.SpeedRatio,
+					lr.Result.MemoryBytes,
+					lr.Result.OpsPerSec,
 				)
 			}
 		}
