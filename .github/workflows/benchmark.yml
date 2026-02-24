@@ -417,41 +417,16 @@ jobs:
     - name: Run comparison
       run: cd compare && go run . | tee /tmp/comparison_output.txt
 
-    - name: Update README with benchmark results
+    - name: Copy latest comparison result
       run: |
-        python3 - <<'EOF'
-        import os, re
+        LATEST=$(ls comparison_*.json 2>/dev/null | sort -r | head -1)
+        if [ -z "$LATEST" ]; then
+          echo "No comparison JSON file found" && exit 1
+        fi
+        cp "$LATEST" comparison_latest.json
 
-        comparison_file = os.popen("ls comparison_*.json 2>/dev/null | sort -r | head -1").read().strip()
-        with open("/tmp/comparison_output.txt") as f:
-            comparison_output = f.read().strip()
-
-        new_section = (
-            "<!-- BENCHMARK_RESULTS_START -->\n"
-            f"[最新の結果json]({comparison_file})\n"
-            "<details><summary>詳細</summary>\n\n"
-            "```\n"
-            f"{comparison_output}\n"
-            "```\n"
-            "</details>\n"
-            "<!-- BENCHMARK_RESULTS_END -->"
-        )
-
-        with open("README.md") as f:
-            content = f.read()
-
-        content = re.sub(
-            r"<!-- BENCHMARK_RESULTS_START -->.*?<!-- BENCHMARK_RESULTS_END -->",
-            new_section,
-            content,
-            flags=re.DOTALL,
-        )
-
-        with open("README.md", "w") as f:
-            f.write(content)
-
-        print("README.md updated successfully")
-        EOF
+    - name: Update README with benchmark results
+      run: python3 .github/tools/update_readme.py /tmp/comparison_output.txt README.md
 
     - name: Commit and push README and latest comparison
       run: |
