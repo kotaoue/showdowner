@@ -331,6 +331,12 @@ func saveComparisonToJSON(comp *Comparison) (string, error) {
 	}
 	
 	fmt.Printf("\nComparison saved to: %s\n", filename)
+
+	if err := os.WriteFile("../comparison_latest.json", jsonData, 0644); err != nil {
+		return "", fmt.Errorf("failed to write latest file: %v", err)
+	}
+	fmt.Println("Latest comparison saved to: ../comparison_latest.json")
+
 	return filename, nil
 }
 
