@@ -201,7 +201,10 @@ func compareResults(reports []*BenchmarkReport) *Comparison {
 		// 速度比率計算
 		if fastest != "" {
 			for lang, result := range testComp.Results {
-				result.SpeedRatio = result.DurationMs / fastestTime
+				// fastestTime == 0 の場合は比率を計算できないため 0 のまま（+Inf を避ける）
+				if fastestTime > 0 {
+					result.SpeedRatio = result.DurationMs / fastestTime
+				}
 				testComp.Results[lang] = result
 			}
 			testComp.Fastest = fastest
