@@ -49,7 +49,7 @@ scala:
 	cd scala && sbt run
 
 julia:
-	cd julia && julia main.jl
+	cd julia && julia --project=. main.jl
 
 all: go php python3 rust javascript typescript java kotlin cpp ruby c csharp swift dart scala julia
 
