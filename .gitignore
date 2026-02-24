@@ -4,3 +4,6 @@ julia/Manifest.toml
 # Benchmark result files
 */benchmark_*.json
 comparison_*.json
+
+# Build artifacts
+compare/compare
