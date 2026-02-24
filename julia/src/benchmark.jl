@@ -49,7 +49,7 @@ function is_prime(n)
     if n < 2
         return false
     end
-    for i in 2:Int(sqrt(n))
+    for i in 2:isqrt(n)
         if n % i == 0
             return false
         end
