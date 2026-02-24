@@ -45,7 +45,9 @@ class Benchmark {
     
     private static func isPrime(_ n: Int) -> Bool {
         if n < 2 { return false }
-        for i in 2...Int(sqrt(Double(n))) {
+        let sqrtN = Int(sqrt(Double(n)))
+        if sqrtN < 2 { return true }
+        for i in 2...sqrtN {
             if n % i == 0 { return false }
         }
         return true
