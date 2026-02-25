@@ -377,6 +377,8 @@ jobs:
   compare-languages:
     runs-on: ubuntu-latest
     needs: [benchmark-go, benchmark-php, benchmark-python3, benchmark-rust, benchmark-javascript, benchmark-typescript, benchmark-java, benchmark-kotlin, benchmark-cpp, benchmark-ruby, benchmark-c, benchmark-csharp, benchmark-swift, benchmark-dart, benchmark-scala, benchmark-julia]
+    permissions:
+      contents: write
     
     steps:
     - name: Checkout code
