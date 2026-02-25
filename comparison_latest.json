@@ -1,0 +1,912 @@
+{
+  "timestamp": "2026-02-25T14:45:38Z",
+  "languages": {
+    "c": {
+      "total_time": 12.971,
+      "version": "",
+      "system": {
+        "os": "Linux",
+        "arch": "x86_64",
+        "cpus": 4
+      }
+    },
+    "cpp": {
+      "total_time": 0.439,
+      "version": "",
+      "system": {
+        "os": "Linux",
+        "arch": "x86_64",
+        "cpus": 4
+      }
+    },
+    "csharp": {
+      "total_time": 0.9508918,
+      "version": "",
+      "system": {
+        "os": "Linux",
+        "arch": "X64",
+        "cpus": 4
+      }
+    },
+    "dart": {
+      "total_time": 2.569352,
+      "version": "",
+      "system": {
+        "os": "Linux",
+        "arch": "unknown",
+        "cpus": 4
+      }
+    },
+    "go": {
+      "total_time": 4.172200187,
+      "version": "go1.21.13",
+      "system": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4
+      }
+    },
+    "java": {
+      "total_time": 1.746233529,
+      "version": "",
+      "system": {
+        "os": "Linux",
+        "arch": "amd64",
+        "cpus": 4
+      }
+    },
+    "javascript": {
+      "total_time": 2.956979875,
+      "version": "",
+      "system": {
+        "os": "linux",
+        "arch": "x64",
+        "cpus": 4
+      }
+    },
+    "julia": {
+      "total_time": 1.035066006,
+      "version": "",
+      "system": {
+        "os": "Linux",
+        "arch": "x86_64",
+        "cpus": 4
+      }
+    },
+    "kotlin": {
+      "total_time": 1.857649878,
+      "version": "",
+      "system": {
+        "os": "Linux",
+        "arch": "amd64",
+        "cpus": 4
+      }
+    },
+    "php": {
+      "total_time": 35.622761964797974,
+      "version": "8.3.30",
+      "system": {
+        "os": "Linux",
+        "arch": "x86_64",
+        "cpus": 4
+      }
+    },
+    "python3": {
+      "total_time": 14.043732404708862,
+      "version": "",
+      "system": {
+        "os": "Linux",
+        "arch": "x86_64",
+        "cpus": 4
+      }
+    },
+    "ruby": {
+      "total_time": 18.407107353,
+      "version": "",
+      "system": {
+        "os": "linux",
+        "arch": "x86_64",
+        "cpus": 4
+      }
+    },
+    "rust": {
+      "total_time": 0.805653273,
+      "version": "",
+      "system": {
+        "os": "linux",
+        "arch": "x86_64",
+        "cpus": 4
+      }
+    },
+    "scala": {
+      "total_time": 0,
+      "version": "",
+      "system": {
+        "os": "Linux",
+        "arch": "amd64",
+        "cpus": 4
+      }
+    },
+    "swift": {
+      "total_time": 0.428492959,
+      "version": "",
+      "system": {
+        "os": "macOS",
+        "arch": "arm64",
+        "cpus": 3
+      }
+    },
+    "typescript": {
+      "total_time": 3.000519542,
+      "version": "",
+      "system": {
+        "os": "linux",
+        "arch": "x64",
+        "cpus": 4
+      }
+    }
+  },
+  "test_comparisons": [
+    {
+      "test": "Large Array Sort (1M elements)",
+      "results": {
+        "c": {
+          "duration_ms": 138.718841,
+          "memory_bytes": 0,
+          "ops_per_sec": 7208826.09,
+          "speed_ratio": 0
+        },
+        "cpp": {
+          "duration_ms": 69.201082,
+          "memory_bytes": 0,
+          "ops_per_sec": 14450641.1,
+          "speed_ratio": 0
+        },
+        "csharp": {
+          "duration_ms": 7670.0793,
+          "memory_bytes": 0,
+          "ops_per_sec": 13037690.65992879,
+          "speed_ratio": 0
+        },
+        "dart": {
+          "duration_ms": 333.801,
+          "memory_bytes": 0,
+          "ops_per_sec": 2995796.896953574,
+          "speed_ratio": 0
+        },
+        "go": {
+          "duration_ms": 161.685335,
+          "memory_bytes": 8002832,
+          "ops_per_sec": 6184852.819212082,
+          "speed_ratio": 0
+        },
+        "java": {
+          "duration_ms": 533.836295,
+          "memory_bytes": 0,
+          "ops_per_sec": 1873233.4413492812,
+          "speed_ratio": 0
+        },
+        "javascript": {
+          "duration_ms": 345.602538,
+          "memory_bytes": 0,
+          "ops_per_sec": 2893497.269397946,
+          "speed_ratio": 0
+        },
+        "julia": {
+          "duration_ms": 27.227809,
+          "memory_bytes": 0,
+          "ops_per_sec": 36727156.41570719,
+          "speed_ratio": 0
+        },
+        "kotlin": {
+          "duration_ms": 99.144082,
+          "memory_bytes": 0,
+          "ops_per_sec": 10086330.720173495,
+          "speed_ratio": 0
+        },
+        "php": {
+          "duration_ms": 455.585956,
+          "memory_bytes": 16781424,
+          "ops_per_sec": 2194975.471854123,
+          "speed_ratio": 0
+        },
+        "python3": {
+          "duration_ms": 559.729814,
+          "memory_bytes": 0,
+          "ops_per_sec": 1786576.2624074777,
+          "speed_ratio": 0
+        },
+        "ruby": {
+          "duration_ms": 285.388596,
+          "memory_bytes": 0,
+          "ops_per_sec": 3503994.2521038926,
+          "speed_ratio": 0
+        },
+        "rust": {
+          "duration_ms": 31.588316,
+          "memory_bytes": 0,
+          "ops_per_sec": 31657274.797428265,
+          "speed_ratio": 0
+        },
+        "scala": {
+          "duration_ms": 0,
+          "memory_bytes": 0,
+          "ops_per_sec": 0,
+          "speed_ratio": 0
+        },
+        "swift": {
+          "duration_ms": 146.20675,
+          "memory_bytes": 0,
+          "ops_per_sec": 6839629.497270133,
+          "speed_ratio": 0
+        },
+        "typescript": {
+          "duration_ms": 349.199938,
+          "memory_bytes": 0,
+          "ops_per_sec": 2863688.9391429387,
+          "speed_ratio": 0
+        }
+      },
+      "fastest": "scala"
+    },
+    {
+      "test": "String Concatenation (50k iterations)",
+      "results": {
+        "c": {
+          "duration_ms": 12472.903435,
+          "memory_bytes": 0,
+          "ops_per_sec": 4008.69,
+          "speed_ratio": 0
+        },
+        "cpp": {
+          "duration_ms": 2.617571,
+          "memory_bytes": 0,
+          "ops_per_sec": 19101678.62,
+          "speed_ratio": 0
+        },
+        "csharp": {
+          "duration_ms": 427.9655,
+          "memory_bytes": 0,
+          "ops_per_sec": 11683334.89111132,
+          "speed_ratio": 0
+        },
+        "dart": {
+          "duration_ms": 13.574,
+          "memory_bytes": 0,
+          "ops_per_sec": 3683512.597613084,
+          "speed_ratio": 0
+        },
+        "go": {
+          "duration_ms": 2734.438058,
+          "memory_bytes": 3991144,
+          "ops_per_sec": 18285.292604715498,
+          "speed_ratio": 0
+        },
+        "java": {
+          "duration_ms": 17.082085,
+          "memory_bytes": 0,
+          "ops_per_sec": 2927043.1566170054,
+          "speed_ratio": 0
+        },
+        "javascript": {
+          "duration_ms": 14.04333,
+          "memory_bytes": 0,
+          "ops_per_sec": 3560409.1052478296,
+          "speed_ratio": 0
+        },
+        "julia": {
+          "duration_ms": 10.594961,
+          "memory_bytes": 0,
+          "ops_per_sec": 4719224.544573595,
+          "speed_ratio": 0
+        },
+        "kotlin": {
+          "duration_ms": 94.716572,
+          "memory_bytes": 0,
+          "ops_per_sec": 527890.7264506997,
+          "speed_ratio": 0
+        },
+        "php": {
+          "duration_ms": 10.890007,
+          "memory_bytes": 790528,
+          "ops_per_sec": 4591365.268412296,
+          "speed_ratio": 0
+        },
+        "python3": {
+          "duration_ms": 8.767843,
+          "memory_bytes": 0,
+          "ops_per_sec": 5702656.6961250845,
+          "speed_ratio": 0
+        },
+        "ruby": {
+          "duration_ms": 1808.928362,
+          "memory_bytes": 0,
+          "ops_per_sec": 27640.67447354225,
+          "speed_ratio": 0
+        },
+        "rust": {
+          "duration_ms": 2.549375,
+          "memory_bytes": 0,
+          "ops_per_sec": 19612650.159352783,
+          "speed_ratio": 0
+        },
+        "scala": {
+          "duration_ms": 0,
+          "memory_bytes": 0,
+          "ops_per_sec": 0,
+          "speed_ratio": 0
+        },
+        "typescript": {
+          "duration_ms": 12.653557,
+          "memory_bytes": 0,
+          "ops_per_sec": 3951458.076175735,
+          "speed_ratio": 0
+        }
+      },
+      "fastest": "scala"
+    },
+    {
+      "test": "Hash Computing (50k iterations)",
+      "results": {
+        "c": {
+          "duration_ms": 7.905981,
+          "memory_bytes": 0,
+          "ops_per_sec": 6324325.85,
+          "speed_ratio": 1
+        },
+        "cpp": {
+          "duration_ms": 14.170175,
+          "memory_bytes": 0,
+          "ops_per_sec": 3528537.93,
+          "speed_ratio": 1.7923360807469688
+        }
+      },
+      "fastest": "c"
+    },
+    {
+      "test": "SHA256 Hashing (50k iterations)",
+      "results": {
+        "csharp": {
+          "duration_ms": 6895.5865,
+          "memory_bytes": 0,
+          "ops_per_sec": 725102.1668953155,
+          "speed_ratio": 0
+        },
+        "dart": {
+          "duration_ms": 777.041,
+          "memory_bytes": 0,
+          "ops_per_sec": 64346.668965987636,
+          "speed_ratio": 0
+        },
+        "go": {
+          "duration_ms": 36.698052,
+          "memory_bytes": 8,
+          "ops_per_sec": 1362470.1387419691,
+          "speed_ratio": 0
+        },
+        "java": {
+          "duration_ms": 83.180748,
+          "memory_bytes": 0,
+          "ops_per_sec": 601100.629679358,
+          "speed_ratio": 0
+        },
+        "javascript": {
+          "duration_ms": 115.138936,
+          "memory_bytes": 0,
+          "ops_per_sec": 434257.9646558485,
+          "speed_ratio": 0
+        },
+        "julia": {
+          "duration_ms": 408.988661,
+          "memory_bytes": 0,
+          "ops_per_sec": 122252.77805440186,
+          "speed_ratio": 0
+        },
+        "kotlin": {
+          "duration_ms": 436.988747,
+          "memory_bytes": 0,
+          "ops_per_sec": 114419.42233812259,
+          "speed_ratio": 0
+        },
+        "php": {
+          "duration_ms": 225.248813,
+          "memory_bytes": 1280,
+          "ops_per_sec": 221976.7518168597,
+          "speed_ratio": 0
+        },
+        "python3": {
+          "duration_ms": 53.651332,
+          "memory_bytes": 0,
+          "ops_per_sec": 931943.2964493623,
+          "speed_ratio": 0
+        },
+        "ruby": {
+          "duration_ms": 268.095169,
+          "memory_bytes": 0,
+          "ops_per_sec": 186500.93616569418,
+          "speed_ratio": 0
+        },
+        "rust": {
+          "duration_ms": 34.083841,
+          "memory_bytes": 0,
+          "ops_per_sec": 1466970.8147036599,
+          "speed_ratio": 0
+        },
+        "scala": {
+          "duration_ms": 0,
+          "memory_bytes": 0,
+          "ops_per_sec": 0,
+          "speed_ratio": 0
+        },
+        "swift": {
+          "duration_ms": 44.220584,
+          "memory_bytes": 0,
+          "ops_per_sec": 1130695.153189293,
+          "speed_ratio": 0
+        },
+        "typescript": {
+          "duration_ms": 115.719713,
+          "memory_bytes": 0,
+          "ops_per_sec": 432078.4998835937,
+          "speed_ratio": 0
+        }
+      },
+      "fastest": "scala"
+    },
+    {
+      "test": "Math Operations (10M iterations)",
+      "results": {
+        "c": {
+          "duration_ms": 170.849298,
+          "memory_bytes": 0,
+          "ops_per_sec": 58531115.53,
+          "speed_ratio": 0
+        },
+        "cpp": {
+          "duration_ms": 174.256146,
+          "memory_bytes": 0,
+          "ops_per_sec": 57386785.08,
+          "speed_ratio": 0
+        },
+        "csharp": {
+          "duration_ms": 22635.6274,
+          "memory_bytes": 0,
+          "ops_per_sec": 44178158.14190201,
+          "speed_ratio": 0
+        },
+        "dart": {
+          "duration_ms": 260.52,
+          "memory_bytes": 0,
+          "ops_per_sec": 38384768.92369109,
+          "speed_ratio": 0
+        },
+        "go": {
+          "duration_ms": 187.996592,
+          "memory_bytes": 8,
+          "ops_per_sec": 53192453.616393216,
+          "speed_ratio": 0
+        },
+        "java": {
+          "duration_ms": 552.454621,
+          "memory_bytes": 0,
+          "ops_per_sec": 18101034.220510215,
+          "speed_ratio": 0
+        },
+        "javascript": {
+          "duration_ms": 1796.818536,
+          "memory_bytes": 0,
+          "ops_per_sec": 5565392.275093939,
+          "speed_ratio": 0
+        },
+        "julia": {
+          "duration_ms": 439.208715,
+          "memory_bytes": 0,
+          "ops_per_sec": 22768218.52225769,
+          "speed_ratio": 0
+        },
+        "kotlin": {
+          "duration_ms": 526.95985,
+          "memory_bytes": 0,
+          "ops_per_sec": 18976777.832314927,
+          "speed_ratio": 0
+        },
+        "php": {
+          "duration_ms": 6008.6658,
+          "memory_bytes": 0,
+          "ops_per_sec": 1664262.9716304997,
+          "speed_ratio": 0
+        },
+        "python3": {
+          "duration_ms": 1765.070915,
+          "memory_bytes": 0,
+          "ops_per_sec": 5665494.747978048,
+          "speed_ratio": 0
+        },
+        "ruby": {
+          "duration_ms": 1744.788782,
+          "memory_bytes": 0,
+          "ops_per_sec": 5731352.759236161,
+          "speed_ratio": 0
+        },
+        "rust": {
+          "duration_ms": 164.68641,
+          "memory_bytes": 0,
+          "ops_per_sec": 60721464.50942734,
+          "speed_ratio": 0
+        },
+        "scala": {
+          "duration_ms": 0,
+          "memory_bytes": 0,
+          "ops_per_sec": 0,
+          "speed_ratio": 0
+        },
+        "swift": {
+          "duration_ms": 94.951084,
+          "memory_bytes": 0,
+          "ops_per_sec": 105317386.37128145,
+          "speed_ratio": 0
+        },
+        "typescript": {
+          "duration_ms": 1827.468508,
+          "memory_bytes": 0,
+          "ops_per_sec": 5472050.520281797,
+          "speed_ratio": 0
+        }
+      },
+      "fastest": "scala"
+    },
+    {
+      "test": "Memory Allocation (100k x 1KB)",
+      "results": {
+        "c": {
+          "duration_ms": 51.234036,
+          "memory_bytes": 0,
+          "ops_per_sec": 1951827.49,
+          "speed_ratio": 0
+        },
+        "cpp": {
+          "duration_ms": 43.870764,
+          "memory_bytes": 0,
+          "ops_per_sec": 2279422.35,
+          "speed_ratio": 0
+        },
+        "csharp": {
+          "duration_ms": 6722.4523,
+          "memory_bytes": 0,
+          "ops_per_sec": 1487552.9011000453,
+          "speed_ratio": 0
+        },
+        "dart": {
+          "duration_ms": 152.806,
+          "memory_bytes": 0,
+          "ops_per_sec": 654424.5644804523,
+          "speed_ratio": 0
+        },
+        "go": {
+          "duration_ms": 107.65372,
+          "memory_bytes": 104800360,
+          "ops_per_sec": 928904.2682408002,
+          "speed_ratio": 0
+        },
+        "java": {
+          "duration_ms": 68.255579,
+          "memory_bytes": 0,
+          "ops_per_sec": 1465081.7041636992,
+          "speed_ratio": 0
+        },
+        "javascript": {
+          "duration_ms": 150.501749,
+          "memory_bytes": 0,
+          "ops_per_sec": 664444.1055631852,
+          "speed_ratio": 0
+        },
+        "julia": {
+          "duration_ms": 118.638164,
+          "memory_bytes": 0,
+          "ops_per_sec": 842899.0859973186,
+          "speed_ratio": 0
+        },
+        "kotlin": {
+          "duration_ms": 36.32616,
+          "memory_bytes": 0,
+          "ops_per_sec": 2752837.073888349,
+          "speed_ratio": 0
+        },
+        "php": {
+          "duration_ms": -1,
+          "memory_bytes": -1,
+          "ops_per_sec": -1,
+          "speed_ratio": -1
+        },
+        "python3": {
+          "duration_ms": 431.084632,
+          "memory_bytes": 0,
+          "ops_per_sec": 231973.0103423483,
+          "speed_ratio": 0
+        },
+        "ruby": {
+          "duration_ms": 221.104698,
+          "memory_bytes": 0,
+          "ops_per_sec": 452274.42430915695,
+          "speed_ratio": 0
+        },
+        "rust": {
+          "duration_ms": 83.062592,
+          "memory_bytes": 0,
+          "ops_per_sec": 1203911.3828761808,
+          "speed_ratio": 0
+        },
+        "scala": {
+          "duration_ms": 0,
+          "memory_bytes": 0,
+          "ops_per_sec": 0,
+          "speed_ratio": 0
+        },
+        "typescript": {
+          "duration_ms": 161.769591,
+          "memory_bytes": 0,
+          "ops_per_sec": 618163.150329038,
+          "speed_ratio": 0
+        }
+      },
+      "fastest": "scala"
+    },
+    {
+      "test": "Matrix Multiplication (300x300)",
+      "results": {
+        "swift": {
+          "duration_ms": 113.970209,
+          "memory_bytes": 0,
+          "ops_per_sec": 236904014.10073748,
+          "speed_ratio": 1
+        }
+      },
+      "fastest": "swift"
+    },
+    {
+      "test": "Memory Allocation (50k x 512B)",
+      "results": {
+        "swift": {
+          "duration_ms": 24.067708,
+          "memory_bytes": 0,
+          "ops_per_sec": 2077472.4373421848,
+          "speed_ratio": 1
+        }
+      },
+      "fastest": "swift"
+    },
+    {
+      "test": "String Concatenation (25k iterations)",
+      "results": {
+        "swift": {
+          "duration_ms": 2.503292,
+          "memory_bytes": 0,
+          "ops_per_sec": 9986849.316819612,
+          "speed_ratio": 1
+        }
+      },
+      "fastest": "swift"
+    },
+    {
+      "test": "Prime Numbers (up to 100k)",
+      "results": {
+        "c": {
+          "duration_ms": 5.44419,
+          "memory_bytes": 0,
+          "ops_per_sec": 1761878.26,
+          "speed_ratio": 0
+        },
+        "cpp": {
+          "duration_ms": 5.616063,
+          "memory_bytes": 0,
+          "ops_per_sec": 1707958.05,
+          "speed_ratio": 0
+        },
+        "csharp": {
+          "duration_ms": 582.3337,
+          "memory_bytes": 0,
+          "ops_per_sec": 1647175.9998626208,
+          "speed_ratio": 0
+        },
+        "dart": {
+          "duration_ms": 9.633,
+          "memory_bytes": 0,
+          "ops_per_sec": 995743.7973632306,
+          "speed_ratio": 0
+        },
+        "go": {
+          "duration_ms": 8.640656,
+          "memory_bytes": 0,
+          "ops_per_sec": 1110100.8997465007,
+          "speed_ratio": 0
+        },
+        "java": {
+          "duration_ms": 8.258654,
+          "memory_bytes": 0,
+          "ops_per_sec": 1161448.3425507352,
+          "speed_ratio": 0
+        },
+        "javascript": {
+          "duration_ms": 9.0128,
+          "memory_bytes": 0,
+          "ops_per_sec": 1064264.1576424642,
+          "speed_ratio": 0
+        },
+        "julia": {
+          "duration_ms": 6.838346,
+          "memory_bytes": 0,
+          "ops_per_sec": 1402678.3669618354,
+          "speed_ratio": 0
+        },
+        "kotlin": {
+          "duration_ms": 10.73303,
+          "memory_bytes": 0,
+          "ops_per_sec": 893689.8527256516,
+          "speed_ratio": 0
+        },
+        "php": {
+          "duration_ms": 750.614881,
+          "memory_bytes": 0,
+          "ops_per_sec": 12778.856689643037,
+          "speed_ratio": 0
+        },
+        "python3": {
+          "duration_ms": 101.872205,
+          "memory_bytes": 0,
+          "ops_per_sec": 94157.18380558085,
+          "speed_ratio": 0
+        },
+        "ruby": {
+          "duration_ms": 354.316979,
+          "memory_bytes": 0,
+          "ops_per_sec": 27071.804538048968,
+          "speed_ratio": 0
+        },
+        "rust": {
+          "duration_ms": 5.688519,
+          "memory_bytes": 0,
+          "ops_per_sec": 1686203.3861537597,
+          "speed_ratio": 0
+        },
+        "scala": {
+          "duration_ms": 0,
+          "memory_bytes": 0,
+          "ops_per_sec": 0,
+          "speed_ratio": 0
+        },
+        "swift": {
+          "duration_ms": 2.383541,
+          "memory_bytes": 0,
+          "ops_per_sec": 4024264.7388905836,
+          "speed_ratio": 0
+        },
+        "typescript": {
+          "duration_ms": 9.777515,
+          "memory_bytes": 0,
+          "ops_per_sec": 981026.3650835615,
+          "speed_ratio": 0
+        }
+      },
+      "fastest": "scala"
+    },
+    {
+      "test": "Matrix Multiplication (500x500)",
+      "results": {
+        "c": {
+          "duration_ms": 123.465521,
+          "memory_bytes": 0,
+          "ops_per_sec": 1012428400.96,
+          "speed_ratio": 0
+        },
+        "cpp": {
+          "duration_ms": 126.930219,
+          "memory_bytes": 0,
+          "ops_per_sec": 984793069.65,
+          "speed_ratio": 0
+        },
+        "csharp": {
+          "duration_ms": 48805.0681,
+          "memory_bytes": 0,
+          "ops_per_sec": 256120984.1766407,
+          "speed_ratio": 0
+        },
+        "dart": {
+          "duration_ms": 1018.504,
+          "memory_bytes": 0,
+          "ops_per_sec": 122729022.17369789,
+          "speed_ratio": 0
+        },
+        "go": {
+          "duration_ms": 934.947341,
+          "memory_bytes": 6181288,
+          "ops_per_sec": 133697369.3794376,
+          "speed_ratio": 0
+        },
+        "java": {
+          "duration_ms": 482.43363,
+          "memory_bytes": 0,
+          "ops_per_sec": 259102998.2714928,
+          "speed_ratio": 0
+        },
+        "javascript": {
+          "duration_ms": 519.815774,
+          "memory_bytes": 0,
+          "ops_per_sec": 240469809.21360034,
+          "speed_ratio": 0
+        },
+        "julia": {
+          "duration_ms": 9.560436,
+          "memory_bytes": 0,
+          "ops_per_sec": 13074717512.883303,
+          "speed_ratio": 0
+        },
+        "kotlin": {
+          "duration_ms": 559.025341,
+          "memory_bytes": 0,
+          "ops_per_sec": 223603459.14980623,
+          "speed_ratio": 0
+        },
+        "php": {
+          "duration_ms": 28169.85917,
+          "memory_bytes": 18553032,
+          "ops_per_sec": 4437366.876475783,
+          "speed_ratio": 0
+        },
+        "python3": {
+          "duration_ms": 11056.013345,
+          "memory_bytes": 0,
+          "ops_per_sec": 11306064.500040444,
+          "speed_ratio": 0
+        },
+        "ruby": {
+          "duration_ms": 13724.341931,
+          "memory_bytes": 0,
+          "ops_per_sec": 9107904.818201516,
+          "speed_ratio": 0
+        },
+        "rust": {
+          "duration_ms": 471.271518,
+          "memory_bytes": 0,
+          "ops_per_sec": 265239878.1290237,
+          "speed_ratio": 0
+        },
+        "scala": {
+          "duration_ms": 0,
+          "memory_bytes": 0,
+          "ops_per_sec": 0,
+          "speed_ratio": 0
+        },
+        "typescript": {
+          "duration_ms": 517.312672,
+          "memory_bytes": 0,
+          "ops_per_sec": 241633361.72828183,
+          "speed_ratio": 0
+        }
+      },
+      "fastest": "scala"
+    }
+  ],
+  "summary": {
+    "fastest_overall": "scala",
+    "slowest_overall": "php",
+    "speed_difference": 0,
+    "total_times": {
+      "c": 12.971,
+      "cpp": 0.439,
+      "csharp": 0.9508918,
+      "dart": 2.569352,
+      "go": 4.172200187,
+      "java": 1.746233529,
+      "javascript": 2.956979875,
+      "julia": 1.035066006,
+      "kotlin": 1.857649878,
+      "php": 35.622761964797974,
+      "python3": 14.043732404708862,
+      "ruby": 18.407107353,
+      "rust": 0.805653273,
+      "scala": 0,
+      "swift": 0.428492959,
+      "typescript": 3.000519542
+    }
+  }
+}
